@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Configuración de variables de entorno
+[context.production.environment]
+  VITE_API_URL = "https://api.yourdomain.com/api"
+  VITE_STORAGE_TYPE = "api"
+
+[context.deploy-preview.environment]
+  VITE_API_URL = "https://staging-api.yourdomain.com/api"
+  VITE_STORAGE_TYPE = "api" 
